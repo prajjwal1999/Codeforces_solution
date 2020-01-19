@@ -1,0 +1,33 @@
+//https://codeforces.com/problemset/problem/588/A
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+int main()
+{
+  #ifndef ONLINE_JUDGE
+  freopen("input.txt","r",stdin);
+  freopen("output.txt","w",stdout);
+  #endif
+  ll n;
+  cin>>n;
+  vector <pair<ll,ll>> v;
+  for(ll i=0;i<n;i++)
+  {
+    ll a,p;
+    cin>>a>>p;
+    v.push_back(make_pair(a,p));
+  }
+  ll sum=0;
+  ll price=v[0].second;
+  for(ll i=0;i<n;i++)
+{
+    price = min(price, v[i].second);
+    sum = sum + v[i].first*price;
+}
+
+   cout<<sum;
+
+  return 0;
+
+}
