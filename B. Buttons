@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+int main()
+{
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+	ll n;
+	cin>>n;
+	vector<ll> cost;
+	vector<ll> cou;
+	for(ll i=0;i<n;i++)
+	{
+		ll x;
+		cin>>x;
+		cost.push_back(x);
+	}
+	ll m;
+	cin>>m;
+	for(ll i=0;i<m;i++)
+	{
+		ll y;
+		cin>>y;
+		cou.push_back(y);
+	}
+     ll sum=0;
+     sort(cost.begin(), cost.end());
+     sum = accumulate(cost.begin(), cost.end(), sum);
+     
+	for(ll i=0;i<m;i++)
+	{
+		ll temp;
+		temp=n- cou[i];
+		cout<<sum-cost[temp]<<endl;
+		
+	}
+
+	return 0;
+  }
