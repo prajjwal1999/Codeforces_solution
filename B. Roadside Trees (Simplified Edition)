@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+
+    int n, h, h0(0);
+    scanf("%d", &n);
+    int time = n + n - 1;
+    while (n--)
+    {
+        scanf("%d", &h);
+        time += abs(h - h0);
+        h0 = h;
+    }
+    printf("%d\n", time);
+    return 0;
+
+
+	return 0;
+  }
